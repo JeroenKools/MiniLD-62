@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
 		gun = GameObject.Find("Player/Gun").GetComponent<Gun>();
 		fpsController = GameObject.Find("/Player").GetComponent<FirstPersonController>();
 		
-		print(menu + ", " + menu.activeInHierarchy);
+		Cursor.visible = false;
 	}
 	
 	// Update is called once per frame
