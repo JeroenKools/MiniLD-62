@@ -5,10 +5,12 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class GameManager : MonoBehaviour {
 
 	GameObject menu;
+	Gun gun;
 	FirstPersonController fpsController;
 	
 	void Start(){
 		menu = GameObject.Find("Canvas").transform.Find("Menu").gameObject;
+		gun = GameObject.Find("Player/Gun").GetComponent<Gun>();
 		fpsController = GameObject.Find("/Player").GetComponent<FirstPersonController>();
 		
 		print(menu + ", " + menu.activeInHierarchy);
@@ -23,10 +25,13 @@ public class GameManager : MonoBehaviour {
 				Continue();
 			}
 		}
+		
 		// Keys during gameplay
 		else {
 			if(Input.GetKeyDown(KeyCode.Escape)) {
 				ShowMenu();
+			} else if(Input.GetButtonDown("Fire1")) {
+				gun.Shoot();
 			}
 		}
 	}
