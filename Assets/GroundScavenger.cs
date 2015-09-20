@@ -19,8 +19,10 @@ public class GroundScavenger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update(){
-		// Pick between Harvest, Roam and Attack behaviors
-		Roam();
+		if(GameManager.gameState == GameManager.GameStates.Playing) {
+			// Pick between Harvest, Roam and Attack behaviors
+			Roam();
+		}
 	}
 	
 	/// <summary>
