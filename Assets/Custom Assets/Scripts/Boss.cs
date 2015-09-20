@@ -27,4 +27,27 @@ public class Boss : MonoBehaviour {
 		power = Mathf.Max(0, power - 1);
 		print("Boss was hit!");
 	}
+	
+	
+	void ToWounded(){
+		// trigger attack-->wounded animation here
+		bossState = BossStates.Wounded;
+	}
+	
+	
+	void ToReboot(){
+		// trigger wounded-->reboot animation here
+		bossState = BossStates.Reboot;
+	}
+	
+	
+	void ToAttack(){
+		// trigger reboot-->attack animation here
+		bossState = BossStates.Attack;
+	}
+	
+	
+	void Die(){
+		// trigger death animation here
+	}
 }

@@ -2,10 +2,12 @@
 using System.Collections;
 using UnityStandardAssets.Characters.FirstPerson;
 
+/// <summary>
+/// Manages control of general game flow and stuff not directly related to player or boss
+/// </summary>
 public class GameManager : MonoBehaviour {
 
 	GameObject menu;
-	Gun gun;
 	FirstPersonController fpsController;
 	
 	public enum GameStates {
@@ -16,16 +18,16 @@ public class GameManager : MonoBehaviour {
 	}
 	public static GameStates gameState;
 	
+	
 	void Start(){
-		menu = GameObject.Find("Canvas").transform.Find("Menu").gameObject;
-		gun = GameObject.Find("Player/Gun").GetComponent<Gun>();
+		menu = GameObject.Find("Canvas").transform.Find("Menu").gameObject;		
 		fpsController = GameObject.Find("/Player").GetComponent<FirstPersonController>();
 		
 		Cursor.visible = false;
 		gameState = GameStates.Playing;
 	}
 	
-	// Update is called once per frame
+	
 	void Update(){		
 	
 		// Keys in menu
@@ -39,8 +41,6 @@ public class GameManager : MonoBehaviour {
 		else if(gameState == GameStates.Playing) {
 			if(Input.GetKeyDown(KeyCode.Escape)) {
 				ShowMenu();
-			} else if(Input.GetButtonDown("Fire1")) {
-				gun.Shoot();
 			}
 		}
 	}
@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour {
 		menu.SetActive(false);
 		fpsController.enabled = true;
 		gameState = GameStates.Playing;
+		Cursor.visible = false;
 	}
 	
 	
@@ -57,6 +58,7 @@ public class GameManager : MonoBehaviour {
 		menu.SetActive(true);
 		fpsController.enabled = false;
 		gameState = GameStates.Paused;
+		Cursor.visible = true;
 	}
 	
 	
