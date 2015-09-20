@@ -36,6 +36,7 @@ public class HUD : MonoBehaviour {
 				powerBlock.name = string.Format("PowerBlock {0}", i);
 				powerBlock.transform.parent = powerBar.transform;
 				powerBlock.GetComponent<Image>().color = color;
+				powerBlock.transform.localScale = Vector3.one;
 			}
 		}
 	}
