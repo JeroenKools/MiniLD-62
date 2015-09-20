@@ -2818,7 +2818,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485658, guid: 2fb135ea70f60a343bd253f253083f7f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.60000002
       objectReference: {fileID: 0}
     - target: {fileID: 485658, guid: 2fb135ea70f60a343bd253f253083f7f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2959,9 +2959,9 @@ MonoBehaviour:
   m_WalkSpeed: 4
   m_RunSpeed: 8
   m_RunstepLenghten: .5
-  m_JumpSpeed: 4
-  m_StickToGroundForce: 2
-  m_GravityMultiplier: 1
+  m_JumpSpeed: 12
+  m_StickToGroundForce: 4
+  m_GravityMultiplier: 2
   m_MouseLook:
     XSensitivity: 2
     YSensitivity: 2
@@ -3133,7 +3133,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2743efb173317fd4897b21f9c923935a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -3174,7 +3174,7 @@ Transform:
   m_GameObject: {fileID: 1731529590}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 10, z: 80}
-  m_LocalScale: {x: 8, y: 20, z: 8}
+  m_LocalScale: {x: 9, y: 27, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
