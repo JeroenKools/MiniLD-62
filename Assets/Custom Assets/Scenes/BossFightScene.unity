@@ -778,10 +778,10 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_HDR: 0
+  m_HDR: 1
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
@@ -1241,7 +1241,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_Strength: 1
-    m_Bias: .0500000007
+    m_Bias: .5
     m_NormalBias: .400000006
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
@@ -2818,7 +2818,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 485658, guid: 2fb135ea70f60a343bd253f253083f7f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.60000002
+      value: 1.54999995
       objectReference: {fileID: 0}
     - target: {fileID: 485658, guid: 2fb135ea70f60a343bd253f253083f7f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2843,6 +2843,14 @@ Prefab:
     - target: {fileID: 485658, guid: 2fb135ea70f60a343bd253f253083f7f, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6471250, guid: 2fb135ea70f60a343bd253f253083f7f, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6479720, guid: 2fb135ea70f60a343bd253f253083f7f, type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2fb135ea70f60a343bd253f253083f7f, type: 2}
