@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 406706}
+  - 114: {fileID: 11475186}
   m_Layer: 0
   m_Name: scavenger_air
   m_TagString: Untagged
@@ -207,8 +208,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 119394}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
+  m_LocalPosition: {x: -3, y: 12, z: 15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 442292}
@@ -467,6 +468,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194194}
   m_Mesh: {fileID: 4300000, guid: 28873e71c424d40499ea75628e4e4a0e, type: 3}
+--- !u!114 &11475186
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 119394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4856ef3e68e00684f83559b073fc638e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  altitude: 12
+  speed: 10
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

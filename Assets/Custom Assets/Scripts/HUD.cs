@@ -22,10 +22,6 @@ public class HUD : MonoBehaviour {
 	
 
 	void Update(){
-		if(Boss.power <= 0) {
-			GameManager.Win();
-		}
-	
 		UpdatePower(bossPowerBar, bossTotalPower, Boss.power, bossColor);
 		UpdatePower(playerPowerBar, playerTotalPower, 10, playerColor);
 	}

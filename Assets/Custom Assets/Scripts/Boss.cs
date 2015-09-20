@@ -10,16 +10,20 @@ public class Boss : MonoBehaviour {
 	}
 	public static BossStates bossState;
 	public static int power;
+	GameManager gm;
 
 	// Use this for initialization
 	void Start(){
 		bossState = BossStates.Attack;
 		power = 10;
+		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 	
 	// Update is called once per frame
 	void Update(){
-	
+		if(power <= 0) {
+			Die();			
+		}
 	}
 	
 	void OnParticleCollision(GameObject other){
@@ -48,6 +52,7 @@ public class Boss : MonoBehaviour {
 	
 	
 	void Die(){
-		// trigger death animation here
+		// trigger death animation here		
+		gm.Win();
 	}
 }
