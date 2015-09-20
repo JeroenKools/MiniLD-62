@@ -12,18 +12,20 @@ public class HUD : MonoBehaviour {
 	GameObject playerPowerBar;
 	Text playerTotalPower;
 	Text bossTotalPower;
+	GameManager gm;
 
 	void Start(){
 		bossPowerBar = transform.Find("BossHUDRow/PowerBar").gameObject;
 		playerPowerBar = transform.Find("PlayerHUDRow/PowerBar").gameObject;
 		bossTotalPower = transform.Find("BossHUDRow/TotalPwr").GetComponent<Text>();
 		playerTotalPower = transform.Find("PlayerHUDRow/TotalPwr").GetComponent<Text>();
+		gm = GameObject.Find("GameManager").GetComponent<GameManager>();
 	}
 	
 
 	void Update(){
 		if(Boss.power <= 0) {
-			GameManager.Win();
+			gm.Win();
 		}
 	
 		UpdatePower(bossPowerBar, bossTotalPower, Boss.power, bossColor);

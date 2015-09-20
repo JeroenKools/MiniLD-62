@@ -47,7 +47,7 @@ public class Boss : MonoBehaviour {
 	}
 	
 	
-	void Die(){
+	public void Die(){
 		// trigger death animation here
 	}
 }

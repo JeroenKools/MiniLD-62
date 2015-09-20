@@ -7,7 +7,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 /// </summary>
 public class GameManager : MonoBehaviour {
 
-	GameObject menu;
+	GameObject menu, winScreen, defeatScreen;
+	Boss boss;
 	FirstPersonController fpsController;
 	
 	public enum GameStates {
@@ -21,14 +22,24 @@ public class GameManager : MonoBehaviour {
 	
 	void Start(){
 		menu = GameObject.Find("Canvas").transform.Find("Menu").gameObject;		
+		winScreen = GameObject.Find("Canvas").transform.Find("Victory").gameObject;
+		defeatScreen = GameObject.Find("Canvas").transform.Find("Defeat").gameObject;
 		fpsController = GameObject.Find("/Player").GetComponent<FirstPersonController>();
+		boss = GameObject.Find("/Boss").GetComponent<Boss>();
 		
-		Cursor.visible = false;
 		gameState = GameStates.Playing;
 	}
 	
 	
-	void Update(){		
+	void Update(){	
+	
+		if(gameState == GameStates.Playing) {
+			Cursor.visible = false;
+			fpsController.enabled = true;
+		} else {
+			Cursor.visible = true;
+			fpsController.enabled = false;
+		}
 	
 		// Keys in menu
 		if(gameState == GameStates.Paused) {
@@ -48,17 +59,14 @@ public class GameManager : MonoBehaviour {
 	
 	public void Continue(){
 		menu.SetActive(false);
-		fpsController.enabled = true;
+		
 		gameState = GameStates.Playing;
-		Cursor.visible = false;
 	}
 	
 	
 	public void ShowMenu(){
 		menu.SetActive(true);
-		fpsController.enabled = false;
 		gameState = GameStates.Paused;
-		Cursor.visible = true;
 	}
 	
 	
@@ -72,10 +80,11 @@ public class GameManager : MonoBehaviour {
 	}
 	
 	
-	public static void Win(){
+	public void Win(){
 		if(gameState == GameStates.Playing) {
-			print("You win!");
 			gameState = GameStates.Won;
+			winScreen.SetActive(true);
+			boss.Die();
 		}
 	}
 	
