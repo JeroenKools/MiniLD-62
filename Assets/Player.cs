@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start(){
-		gun = GameObject.Find("Player/Gun").GetComponent<Gun>();
+		gun = GameObject.Find("Player/gun/Laser").GetComponent<Gun>();
 		power = 10;
 	}
 	

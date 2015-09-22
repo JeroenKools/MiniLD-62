@@ -7,12 +7,14 @@ public class Gun : MonoBehaviour {
 
 	// Use this for initialization
 	void Start(){
-		particleSystem = transform.Find("Nozzle").GetComponent<ParticleSystem>();
+		particleSystem = transform.GetComponent<ParticleSystem>();
 	}
 	
 	// Update is called once per frame
 	void Update(){
-		transform.localRotation = Camera.main.transform.localRotation;
+		//transform.parent.localRotation = Camera.main.transform.localRotation;
+		Vector3 cameraAngle = Camera.main.transform.localRotation.eulerAngles;
+		transform.parent.localRotation = Quaternion.Euler(-cameraAngle.x, cameraAngle.y + 180, cameraAngle.z);
 	}
 	
 	
